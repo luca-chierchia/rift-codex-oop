@@ -1,0 +1,59 @@
+:root {
+    --bg: #080f1a;
+    --surface: #101d2c;
+    --gold: #cba55a;
+    --gold-light: #f2d894;
+    --teal: #41b7b7;
+    --border: #2c4555;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--bg); font-family: "Inter", sans-serif; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; }
+.site-header { position: relative; z-index: 10; background: #08111dec; border-bottom: 1px solid var(--border); }
+.brand { font: 700 1.4rem "Cinzel", serif; letter-spacing: .13em; color: white; }
+.brand span, .eyebrow { color: var(--gold); }
+.nav-link { color: #c0ced7; transition: color .2s; }
+.nav-link:hover { color: var(--gold-light); }
+.outline-button { border: 1px solid var(--gold); color: var(--gold-light); padding: 10px 18px; font-size: .8rem; letter-spacing: .1em; }
+.outline-button:hover { background: #cba55a24; }
+.hero {
+    min-height: 650px;
+    background: radial-gradient(ellipse at 80% 40%, #166c7770 0%, transparent 45%),
+                radial-gradient(ellipse at 45% 80%, #2a335a80 0%, transparent 40%),
+                linear-gradient(115deg, #07101b 10%, #142a3a 70%, #07101b);
+}
+.hero-sigil { position: absolute; top: 4%; right: 8%; font: 400 clamp(230px, 38vw, 540px) "Cinzel", serif; color: #d4ad6130; line-height: 1; transform: rotate(-12deg); }
+.hero-bottom { position: absolute; bottom: 0; width: 100%; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+.eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .3em; }
+.display-title, .section-title, .champion-name, .modal-title { font-family: "Cinzel", serif; font-weight: 700; }
+.display-title { font-size: clamp(2.6rem, 6vw, 5.5rem); line-height: 1.12; }
+.display-title span { color: var(--gold-light); }
+.section-title { font-size: clamp(2.3rem, 4vw, 3.5rem); }
+.gold-button { display: inline-flex; align-items: center; gap: 18px; padding: 16px 25px; background: linear-gradient(135deg, #e7ca82, #a17b3b); color: #08111b; font-size: .8rem; font-weight: 700; letter-spacing: .12em; transition: transform .2s, filter .2s; }
+.gold-button:hover { transform: translateY(-3px); filter: brightness(1.12); }
+.field { background: var(--surface); color: #fff; border: 1px solid var(--border); padding: 15px 18px; min-width: 0; }
+.field:focus { border-color: var(--gold); outline: none; }
+.champion-card { overflow: hidden; background: var(--surface); border: 1px solid var(--border); transition: transform .25s, border-color .25s; }
+.champion-card:hover { transform: translateY(-6px); border-color: var(--gold); }
+.champion-art { height: 255px; display: grid; place-items: center; position: relative; overflow: hidden; }
+.champion-art::before { content: ""; position: absolute; inset: 20px; border: 1px solid #ffffff25; transform: rotate(45deg) scale(.6); }
+.champion-symbol { font: 700 8rem "Cinzel", serif; color: #ffffff55; text-shadow: 0 0 45px #ffffff55; transition: transform .3s; }
+.champion-card:hover .champion-symbol { transform: scale(1.16) rotate(-5deg); }
+.champion-info { padding: 26px; }
+.champion-name { font-size: 1.55rem; margin-bottom: 6px; }
+.champion-role { color: var(--gold); font-size: .75rem; letter-spacing: .15em; text-transform: uppercase; }
+.champion-description { color: #b5c0ca; font-size: .92rem; line-height: 1.7; margin-top: 14px; min-height: 72px; }
+.champion-button { margin-top: 16px; color: var(--gold-light); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; border-bottom: 1px solid var(--gold); padding-bottom: 6px; }
+.lore-section { background: linear-gradient(#0e2030, #080f1a); border-top: 1px solid var(--border); }
+.modal-backdrop { position: fixed; inset: 0; z-index: 50; padding: 20px; display: flex; align-items: center; justify-content: center; background: #000c; }
+.modal-backdrop.hidden { display: none; }
+.modal-panel { width: min(100%, 720px); max-height: 90vh; overflow-y: auto; padding: clamp(22px, 5vw, 44px); background: #0e1d2b; border: 1px solid var(--gold); box-shadow: 0 20px 80px #000a; }
+.modal-title { font-size: clamp(2rem, 5vw, 3rem); color: var(--gold-light); }
+.ability-item { border-bottom: 1px solid var(--border); padding: 15px 0; }
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition-duration: .01ms !important; }
+}
