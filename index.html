@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Rift Codex: esplora eroi e leggende di un mondo fantasy.">
+    <title>Rift Codex — Le leggende prendono vita</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="./js/app.js"></script>
+</head>
+<body class="text-slate-100">
+    <header class="site-header">
+        <nav class="mx-auto max-w-7xl px-5 py-5 flex items-center justify-between gap-5" aria-label="Navigazione principale">
+            <a class="brand" href="#home">RIFT <span>CODEX</span></a>
+            <div class="hidden sm:flex gap-7 text-sm uppercase tracking-widest">
+                <a class="nav-link" href="#home">Home</a>
+                <a class="nav-link" href="#champions">Campioni</a>
+                <a class="nav-link" href="#lore">Il mondo</a>
+            </div>
+            <a class="outline-button" href="#champions">Esplora</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero relative overflow-hidden">
+            <div class="hero-sigil" aria-hidden="true">✧</div>
+            <div class="mx-auto max-w-7xl px-5 py-28 md:py-40 relative z-10">
+                <p class="eyebrow mb-5">LE CRONACHE DELLA FRATTURA</p>
+                <h1 class="display-title max-w-4xl">OGNI LEGGENDA<br><span>HA UN INIZIO.</span></h1>
+                <p class="mt-7 mb-9 max-w-xl text-slate-300 text-lg leading-relaxed">
+                    Sei destini, un mondo sull'orlo della tempesta. Scopri i campioni, le loro origini e i poteri che cambieranno il regno.
+                </p>
+                <a class="gold-button" href="#champions">SCOPRI I CAMPIONI <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="hero-bottom" aria-hidden="true"></div>
+        </section>
+
+        <section id="champions" class="mx-auto max-w-7xl px-5 py-24">
+            <div class="text-center mb-12">
+                <p class="eyebrow mb-4">SCEGLI IL TUO DESTINO</p>
+                <h2 class="section-title">I CAMPIONI</h2>
+                <p class="text-slate-400 mt-4">Esplora eroi dalle origini e abilità uniche.</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-4 mb-7">
+                <label class="sr-only" for="champion-search">Cerca un campione</label>
+                <input id="champion-search" class="field flex-1" type="search" placeholder="Cerca per nome, regione o storia...">
+                <label class="sr-only" for="role-filter">Filtra per ruolo</label>
+                <select id="role-filter" class="field md:w-64">
+                    <option value="all">Tutti i ruoli</option>
+                    <option value="Guerriero">Guerriero</option>
+                    <option value="Mago">Mago</option>
+                    <option value="Assassino">Assassino</option>
+                    <option value="Tank">Tank</option>
+                    <option value="Tiratore">Tiratore</option>
+                    <option value="Supporto">Supporto</option>
+                </select>
+            </div>
+            <p id="results-count" class="text-slate-400 text-sm mb-6" aria-live="polite"></p>
+            <div id="champions-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7"></div>
+        </section>
+
+        <section id="lore" class="lore-section py-24">
+            <div class="mx-auto max-w-4xl px-5 text-center">
+                <p class="eyebrow mb-5">UN MONDO DA SCOPRIRE</p>
+                <h2 class="section-title mb-7">IL CODEX</h2>
+                <p class="text-slate-300 leading-8">Le antiche casate, i deserti incantati e le città oltre la nebbia custodiscono storie dimenticate. Ogni campione è una porta verso un nuovo capitolo.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-slate-800 py-10 text-center px-5">
+        <p class="brand mb-3">RIFT <span>CODEX</span></p>
+        <p class="text-slate-500 text-sm">Progetto didattico originale. Non affiliato a Riot Games.</p>
+    </footer>
+
+    <div id="champion-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div id="modal-content" class="modal-panel" tabindex="-1"></div>
+    </div>
+</body>
+</html>
